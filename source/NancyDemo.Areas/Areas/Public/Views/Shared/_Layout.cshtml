@@ -1,0 +1,52 @@
+﻿@using NancyDemo.Areas.Extensions
+@inherits NancyRazorViewBase
+
+<!DOCTYPE html>
+
+@{
+    var basket = Context.GetBasket();
+}
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Areas - @ViewBag.Title</title>
+
+        <link rel="stylesheet" type="text/css" href="~/Content/Public.css"/>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Random Web Shop</a></h1>
+            <a href="/admin" style="float:right;">Admin</a>
+        </div>
+        <div>
+            Din handlekurv:
+            @if (basket.IsEmpty())
+            {
+                <span>Tom</span>
+            }
+            else
+            {
+                <ul>
+                    @foreach (var product in basket.Products)
+                    {
+                        <li>@product.Name</li>
+                    }
+                    <li>
+                        <strong>Sum: @basket.GetSum().ToString("C")</strong>
+                    </li>
+                    <li>
+                        <form action="/emptyBasket" method="POST">
+                            <button type="submit">Tøm</button>
+                        </form>
+                    </li>
+                </ul>
+            }
+            
+        </div>
+        <hr/>
+        <div>
+            @RenderBody()
+        </div>
+    </body>
+</html>

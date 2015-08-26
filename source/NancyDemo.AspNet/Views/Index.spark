@@ -1,0 +1,12 @@
+﻿<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Nancy.AspNet / Spark</title>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <ul>
+            <li each='var p in new []{"Hest", "Pølse", "Agurk"}'>${p}</li>
+        </ul>
+    </body>
+</html>

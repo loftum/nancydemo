@@ -1,0 +1,33 @@
+﻿body {
+    color: #5f5f5f;
+    font-family: arial;
+}
+
+a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: coral;
+}
+
+.container {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.col-md-4 {
+    width: 33.33333333%;
+    float: left;
+}
+
+.btn {
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+
+.btn:hover {
+    border: 1px solid cornflowerblue;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+﻿@inherits NancyRazorViewBase<NancyDemo.Areas.Areas.Admin.Models.LoginModel>
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        <form action="login" method="POST" class="bullseye">
+            @Html.AntiForgeryToken()
+            <div class="center-text">
+                <label>Username</label>
+                <input type="text" id="Username" name="Username"/>
+            </div>
+            <div class="center-text">
+                <label>***</label>
+                <input type="password" id="Password" name="Password" />
+            </div>
+            <div class="center-text">
+                <button type="submit">Log in!</button>
+            </div>
+            <div style="height: 20px;"></div>
+            <div class="center-text">
+                <a href="/">...or go away</a>
+            </div>
+            
+        </form>
+        
+    </body>
+</html>

@@ -1,0 +1,19 @@
+﻿@inherits NancyRazorViewBase
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>NancyDemo - @ViewBag.Title</title>
+        <link rel="stylesheet" type="text/css" href="/Content/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="navbar">
+            <h1><a href="/">Random Web Shop</a></h1>
+        </div>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </body>
+</html>

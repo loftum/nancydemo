@@ -1,0 +1,31 @@
+﻿@using NancyDemo.Lib.Extensions
+@inherits NancyRazorViewBase<System.Collections.Generic.IList<NancyDemo.Lib.Domain.Product>>
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<div class="col-md-12">
+    @foreach (var chunk in Model.InChunksOf(3))
+    {
+        foreach (var product in chunk)
+        {
+            <div class="col-md-4" style="height:140px;">
+                <div style="padding:10px;">
+                    <div>
+                        <a href="@string.Format("/{0}", product.Id)">@product.Name</a>
+
+                    </div>
+                    <div>
+                        <img src="/Content/Images/@product.GetImageFile()" alt="@product.Name" height="100" width="100" style="float:left;" />
+                        <span style="float:left;">@product.Price.ToString("C")</span>
+                        <form action="buy/@product.Id" method="POST">
+                            <button type="submit" class="btn btn-xs">Kjøp</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        }
+    }
+</div>

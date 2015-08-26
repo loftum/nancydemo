@@ -1,0 +1,22 @@
+﻿@using NancyDemo.Lib.Domain
+@inherits NancyRazorViewBase<Product>
+
+@{
+    ViewBag.Title = @Model.Name;
+}
+
+<div>
+    <h1>@Model.Name</h1>
+    <div class="col-md-4">
+        <img src="/Content/Images/@Model.GetImageFile()" alt="@Model.Name" />
+    </div>
+    <p class="col-md-8">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum sapien vel dui iaculis, eu tincidunt lacus rhoncus. Mauris nec malesuada nulla. Sed porta hendrerit lorem eget rhoncus. Proin vulputate magna sed urna auctor, vitae ultrices sapien sollicitudin. Pellentesque auctor lectus leo. Aenean et imperdiet tellus. Curabitur sed ligula imperdiet, tristique nibh a, pretium dolor. Morbi fermentum porta viverra. Mauris nec purus vitae ipsum fermentum porttitor eu at est. Aenean finibus mattis tortor sollicitudin fringilla. Nulla ornare dui urna, sed pulvinar enim ornare nec. Aenean dignissim elit purus, in congue erat consectetur at.
+    </p>
+    <div class="clearfix"></div>
+    <hr/>
+    <div class="col-md-12">
+        <strong class="col-md-11">@Model.Price.ToString("C")</strong>
+        <button type="button" class="btn btn-success btn-lg col-md-1">Kjøp!</button>
+    </div>
+</div>
