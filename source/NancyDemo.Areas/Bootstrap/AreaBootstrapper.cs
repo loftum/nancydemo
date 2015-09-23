@@ -9,6 +9,7 @@ using Microsoft.Owin;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.Autofac;
+using Nancy.Diagnostics;
 using Nancy.Owin;
 using Nancy.Security;
 using Nancy.Session;
@@ -64,6 +65,17 @@ namespace NancyDemo.Areas.Bootstrap
             _area = area;
             _rootNamespace = string.Join(".", "NancyDemo.Areas.Areas", area);
             _rootPathProvider = new AreaRootPathProvider(area);
+        }
+
+        protected override DiagnosticsConfiguration DiagnosticsConfiguration
+        {
+            get
+            {
+                return new DiagnosticsConfiguration
+                {
+                    Password = "hest"
+                };
+            }
         }
 
         protected override void ApplicationStartup(ILifetimeScope container, IPipelines pipelines)
