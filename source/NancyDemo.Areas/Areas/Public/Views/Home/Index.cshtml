@@ -10,20 +10,19 @@
     {
         foreach (var product in chunk)
         {
-            <div class="col-md-4" style="height:140px;">
-                <div style="padding:10px;">
+            <div class="col-md-4 margin-below" style="height:240px;">
+                <div class="centered" style="position:relative; height: 100%; width:100%;">
+                    <div class="clear-both" style="margin:10px;">
+                        <img src="/Content/Images/@product.GetImageFile()" alt="@product.Name" height="120" width="120" />
+                    </div>
+                    <div class="clear-both"></div>
                     <div>
                         <a href="@string.Format("/{0}", product.Id)">@product.Name</a>
-
-                    </div>
-                    <div>
-                        <img src="/Content/Images/@product.GetImageFile()" alt="@product.Name" height="100" width="100" style="float:left;" />
-                        <span style="float:left;">@product.Price.ToString("C")</span>
+                        <div>@product.Price.ToString("C")</div>
                         <form action="buy/@product.Id" method="POST">
-                            <button type="submit" class="btn btn-xs">Kjøp</button>
+                            <button type="submit" class="btn btn-xl btn-success">Kjøp!</button>
                         </form>
                     </div>
-
                 </div>
             </div>
         }

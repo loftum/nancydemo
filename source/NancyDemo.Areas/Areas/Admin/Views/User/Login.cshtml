@@ -8,18 +8,19 @@
         <title>@ViewBag.Title</title>
     </head>
     <body>
-        <form action="login" method="POST" class="bullseye">
+        <form action="login" method="POST" class="bullseye center-text">
             @Html.AntiForgeryToken()
-            <div class="center-text">
+            <div class="padded">
                 <label>Username</label>
                 <input type="text" id="Username" name="Username"/>
             </div>
-            <div class="center-text">
-                <label>***</label>
-                <input type="password" id="Password" name="Password" />
+            <div class="padded clear-both">
+                <label class="float-left">***</label>
+                <input type="password" id="Password" name="Password" class="float-right"/>
             </div>
-            <div class="center-text">
-                <button type="submit">Log in!</button>
+            <div class="clear-both"></div>
+            <div class="padded">
+                <button type="submit" class="btn">Log in!</button>
             </div>
             <div style="height: 20px;"></div>
             <div class="center-text">

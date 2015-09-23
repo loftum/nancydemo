@@ -17,6 +17,7 @@ namespace NancyDemo.Areas.Bootstrap
         {
             _viewRenderer = viewRenderer;
             _pages[HttpStatusCode.ImATeapot] = Teapot;
+            _pages[HttpStatusCode.NotFound] = RenderView;
             _pages[HttpStatusCode.InternalServerError] = RenderView;
         }
 

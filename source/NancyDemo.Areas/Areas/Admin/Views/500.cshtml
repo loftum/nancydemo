@@ -1,0 +1,24 @@
+﻿@using Nancy.Extensions
+@using NancyDemo.Lib.Extensions
+@inherits NancyRazorViewBase
+
+@{
+    Layout = null;
+    var exception = Context.GetException().GetMostInner();
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>500</title>
+    </head>
+    <body>
+        <h1>Whooops!</h1>
+        <strong>@exception.Message</strong>
+        <pre>
+            @exception.StackTrace.Trim()
+        </pre>
+    </body>
+</html>

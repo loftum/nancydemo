@@ -121,6 +121,9 @@
     <Content Include="Areas\Public\Views\500.cshtml" />
     <Content Include="Areas\Api\500.cshtml" />
     <Content Include="Areas\Public\Views\Home\Product.cshtml" />
+    <Content Include="Areas\Admin\Views\500.cshtml" />
+    <Content Include="Areas\Admin\Views\404.cshtml" />
+    <Content Include="Areas\Public\Views\404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -146,7 +149,7 @@
     <Compile Include="Authentication\AuthenticationExtensions.cs" />
     <Compile Include="Authentication\AuthenticationType.cs" />
     <Compile Include="Authentication\DemoUser.cs" />
-    <Compile Include="Authentication\SierraAuthentication.cs" />
+    <Compile Include="Authentication\GurgleAuthentication.cs" />
     <Compile Include="Bootstrap\AreaBootstrapper.cs" />
     <Compile Include="Bootstrap\AreaRootPathProvider.cs" />
     <Compile Include="Bootstrap\FruitOfTheDay.cs" />

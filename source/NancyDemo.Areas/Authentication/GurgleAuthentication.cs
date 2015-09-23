@@ -3,9 +3,9 @@ using Microsoft.Owin;
 
 namespace NancyDemo.Areas.Authentication
 {
-    public class SierraAuthentication : OwinMiddleware
+    public class GurgleAuthentication : OwinMiddleware
     {
-        public SierraAuthentication(OwinMiddleware next) : base(next)
+        public GurgleAuthentication(OwinMiddleware next) : base(next)
         {
         }
 

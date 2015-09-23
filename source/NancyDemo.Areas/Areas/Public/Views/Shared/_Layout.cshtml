@@ -16,37 +16,39 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Random Web Shop</a></h1>
-            <a href="/admin" style="float:right;">Admin</a>
+            <h1 class="float-left"><a href="/">Random Web Shop</a></h1>
+            <a href="/admin" class="float-right">Admin</a>
         </div>
-        <div>
-            Din handlekurv:
-            @if (basket.IsEmpty())
-            {
-                <span>Tom</span>
-            }
-            else
-            {
-                <ul>
-                    @foreach (var product in basket.Products)
-                    {
-                        <li>@product.Name</li>
-                    }
-                    <li>
-                        <strong>Sum: @basket.GetSum().ToString("C")</strong>
-                    </li>
-                    <li>
-                        <form action="/emptyBasket" method="POST">
-                            <button type="submit">Tøm</button>
-                        </form>
-                    </li>
-                </ul>
-            }
-            
-        </div>
-        <hr/>
-        <div>
-            @RenderBody()
+        <div class="container clear-both">
+            <div>
+                Din handlekurv:
+                @if (basket.IsEmpty())
+                {
+                    <span>Tom</span>
+                }
+                else
+                {
+                    <ul>
+                        @foreach (var product in basket.Products)
+                        {
+                            <li>@product.Name</li>
+                        }
+                        <li>
+                            <strong>Sum: @basket.GetSum().ToString("C")</strong>
+                        </li>
+                        <li>
+                            <form action="/emptyBasket" method="POST">
+                                <button type="submit" class="btn btn-xs">Tøm</button>
+                            </form>
+                        </li>
+                    </ul>
+                }
+
+            </div>
+            <hr />
+            <div>
+                @RenderBody()
+            </div>
         </div>
     </body>
 </html>

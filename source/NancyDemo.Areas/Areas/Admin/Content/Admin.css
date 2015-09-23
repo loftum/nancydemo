@@ -29,3 +29,36 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+.padded {
+    padding: 10px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.btn {
+    border: 1px solid gray;
+    background: #5f5f5f;
+    color: #00ff00;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border: 1px solid #00ff00;
+}
+
+.btn-success {
+    color: #ffffff;
+    background-color: #5cb85c;
+    border: 1px solid #4cae4c;
+}

@@ -54,6 +54,7 @@ namespace NancyDemo.Areas.Areas.Admin.Modules
                 OwinContext.Authentication.SignIn(identity);
                 return Response.AsRedirect("~/");
             }
+            
             throw new AbandonedMutexException("Please go away.");
         }
 
