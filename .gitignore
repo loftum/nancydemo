@@ -186,3 +186,6 @@ FakesAssemblies/
 # Config stash
 *.dev.local.config
 *.stage.config
+
+source/NancyDemo.Areas/Content/Images/*.jpeg
+source/NancyDemo.Vanilla/Content/Images/*.jpeg

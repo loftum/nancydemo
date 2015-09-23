@@ -4,7 +4,7 @@
         <title>Nancy.AspNet / Spark</title>
     </head>
     <body>
-        <h1>Hello</h1>
+        <h1>Nancy / AspNet / Spark view engine</h1>
         <ul>
             <li each='var p in new []{"Hest", "Pølse", "Agurk"}'>${p}</li>
         </ul>
