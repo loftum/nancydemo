@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.IO;
+using System.Threading.Tasks;
 using Microsoft.Owin.Security.Cookies;
+using Nancy;
 using Nancy.Owin;
 using NancyDemo.Areas.Authentication;
 using NancyDemo.Areas.Bootstrap;
-using NancyDemo.Lib.Extensions;
 using Owin;
 
 namespace NancyDemo.Areas
@@ -30,12 +31,16 @@ namespace NancyDemo.Areas
                 }))
                 .UseNancy(new NancyOptions
                 {
-                    //PerformPassThrough = c => c.Response.StatusCode == HttpStatusCode.ImATeapot,
+                    PerformPassThrough = c => c.Response.StatusCode == HttpStatusCode.ImATeapot,
                     Bootstrapper = new AreaBootstrapper("Public")
                 })
                 .Use((c, next) =>
                 {
-                    c.Response.Body = "I am a teapot".ToStream();
+                    using (var writer = new StreamWriter(c.Response.Body))
+                    {
+                        writer.Write("You can't get coffee. I am a teapot!");
+                    }
+                    c.Response.ContentType = "text/plain";
                     c.Response.ReasonPhrase = "I am a teapot";
                     c.Response.StatusCode = 418;
                     return Task.FromResult(0);
