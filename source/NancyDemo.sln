@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyDemo.Vanilla", "NancyD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyDemo.Lib", "NancyDemo.Lib\NancyDemo.Lib.csproj", "{62226DF9-C307-48C4-BA68-9F696F93748B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Libraries", "20. Libraries", "{5A9C2FAC-364B-45EB-9B5E-58EE9CA0E143}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50. Libraries", "50. Libraries", "{5A9C2FAC-364B-45EB-9B5E-58EE9CA0E143}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Nancy Owin demos", "20. Nancy Owin demos", "{FEC6A5A8-9DBA-480F-863A-ADE2F1814148}"
 EndProject

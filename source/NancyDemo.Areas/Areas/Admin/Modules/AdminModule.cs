@@ -9,12 +9,6 @@ namespace NancyDemo.Areas.Areas.Admin.Modules
         {
             this.RequiresAuthentication();
             Get["/"] = d => View["Index"];
-            Get["logout"] = LogOut;
-        }
-
-        private object LogOut(object arg)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

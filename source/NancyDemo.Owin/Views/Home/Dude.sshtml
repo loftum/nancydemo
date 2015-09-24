@@ -5,7 +5,7 @@
     </head>
     <body>
         <h1>Nancy / Owin / SuperSimpleViewEngine</h1>
-        <b>@Model.Name</b> carries the following:
+        <b>@Model.Name</b> carries the following things:
         <ul>
             @Each.Things
             <li>@Current</li>

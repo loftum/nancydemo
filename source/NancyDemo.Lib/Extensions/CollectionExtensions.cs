@@ -14,7 +14,7 @@ namespace NancyDemo.Lib.Extensions
             {
                 return default(T);
             }
-            return collection[Randoms.Next(0, collection.Count - 1)];
+            return collection[Randoms.Next(0, collection.Count)];
         }
 
         public static bool In<T>(this T item, params T[] items)

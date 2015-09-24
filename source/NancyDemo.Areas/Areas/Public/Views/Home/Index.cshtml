@@ -1,4 +1,5 @@
-﻿@using NancyDemo.Lib.Extensions
+﻿@using NancyDemo.Lib
+@using NancyDemo.Lib.Extensions
 @inherits NancyRazorViewBase<System.Collections.Generic.IList<NancyDemo.Lib.Domain.Product>>
 
 @{
@@ -20,7 +21,7 @@
                         <a href="@string.Format("/{0}", product.Id)">@product.Name</a>
                         <div>@product.Price.ToString("C")</div>
                         <form action="buy/@product.Id" method="POST">
-                            <button type="submit" class="btn btn-xl btn-success">Kjøp!</button>
+                            <button type="submit" class="btn btn-xl btn-success">@Generate.BuyMessage()</button>
                         </form>
                     </div>
                 </div>
