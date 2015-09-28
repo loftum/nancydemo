@@ -18,7 +18,7 @@
                     </div>
                     <div class="clear-both"></div>
                     <div>
-                        <a href="@string.Format("/{0}", product.Id)">@product.Name</a>
+                        <a href="@string.Format("/product/{0}", product.Id)">@product.Name</a>
                         <div>@product.Price.ToString("C")</div>
                         <form action="buy/@product.Id" method="POST">
                             <button type="submit" class="btn btn-xl btn-success">@Generate.BuyMessage()</button>

@@ -19,7 +19,7 @@
     <hr/>
     <div class="col-md-12">
         <strong class="col-md-11">@Model.Price.ToString("C")</strong>
-        <form action="buy/@Model.Id" method="POST">
+        <form action="/buy/@Model.Id" method="POST">
             <button type="submit" class="btn btn-success btn-lg col-md-1">@Generate.BuyMessage()</button>
         </form>
     </div>

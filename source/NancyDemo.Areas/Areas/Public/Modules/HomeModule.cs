@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Nancy;
 using NancyDemo.Areas.Areas.Public.Models;
 using NancyDemo.Areas.Extensions;
@@ -16,11 +19,25 @@ namespace NancyDemo.Areas.Areas.Public.Modules
         {
             _repo = repo;
             Get["/"] = Index;
-            Get["{id}"] = GetProduct;
+            Get["product/{id}"] = GetProduct;
+//            Get["product/1"] = d => "One";
+//            Get["product/1"] = d => "Ein";
             Get["coffee"] = d => HttpStatusCode.ImATeapot;
             Get["Error"] = ThrowError;
             Post["buy/{id}"] = BuyProduct;
             Post["emptyBasket"] = EmptyBasket;
+            Get["async", runAsync: true] = GetSomethingAsync;
+
+            if (ConfigurationManager.AppSettings["Hacks.Enabled"] == "Yeah!")
+            {
+                Get["hack"] = d => Response.AsImage("Content/hack.png");
+            }
+        }
+
+        private async Task<object> GetSomethingAsync(dynamic arg, CancellationToken token)
+        {
+            await Task.Delay(10, token);
+            return Response.AsText("<div>This was done async</div>", "text/html");
         }
 
         private object EmptyBasket(object arg)
@@ -31,11 +48,6 @@ namespace NancyDemo.Areas.Areas.Public.Modules
         }
 
         protected Basket Basket { get { return Context.GetBasket(); } }
-
-        private string Referer
-        {
-            get { return Context.Request.Headers["Referer"].FirstOrDefault() ?? "/"; }
-        }
 
         private object BuyProduct(dynamic arg)
         {
@@ -66,6 +78,11 @@ namespace NancyDemo.Areas.Areas.Public.Modules
         {
             var products = _repo.GetAllProducts();
             return View["Index", products];
+        }
+
+        private string Referer
+        {
+            get { return Context.Request.Headers["Referer"].FirstOrDefault() ?? "/"; }
         }
     }
 }

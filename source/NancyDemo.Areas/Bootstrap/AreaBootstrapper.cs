@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.IO;
 using System.Linq;
 using System.Security.Claims;
@@ -9,6 +10,7 @@ using Microsoft.Owin;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.Autofac;
+using Nancy.Conventions;
 using Nancy.Diagnostics;
 using Nancy.Owin;
 using Nancy.Security;
@@ -83,6 +85,11 @@ namespace NancyDemo.Areas.Bootstrap
             Csrf.Enable(pipelines);
             FruitOfTheDay.Enable(pipelines);
             CookieBasedSessions.Enable(pipelines);
+        }
+
+        protected override void ConfigureConventions(NancyConventions conventions)
+        {
+            conventions.StaticContentsConventions.AddDirectory("Specific");
         }
 
         protected override ILifetimeScope GetApplicationContainer()
