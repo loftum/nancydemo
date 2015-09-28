@@ -6,7 +6,7 @@
     <body>
         <h1>Nancy / AspNet / Spark view engine</h1>
         <ul>
-            <li each='var p in new []{"Hest", "Pølse", "Agurk"}'>${p}</li>
+            <li each='var p in new []{"Horse", "Sausage", "Anteater"}'>${p}</li>
         </ul>
     </body>
 </html>

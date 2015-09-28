@@ -13,22 +13,25 @@ namespace NancyDemo.Areas
     {
         public void Configuration(IAppBuilder app)
         {
-            app.Map("/Data", a => { })
+            app
                 .Map("/admin", a => a
-                .UseCookieAuthentication(new CookieAuthenticationOptions
-                {
-                    CookieName = "AdminUser", 
-                    AuthenticationType = AuthenticationType.Admin
-                })
-                .Use<GurgleAuthentication>()
-                .UseNancy(new NancyOptions
-                {
-                    Bootstrapper = new AreaBootstrapper("Admin")
-                }))
-                .Map("/api", a => a.UseNancy(new NancyOptions
-                {
-                    Bootstrapper = new AreaBootstrapper("Api")
-                }))
+                    .UseCookieAuthentication(new CookieAuthenticationOptions
+                    {
+                        CookieName = "AdminUser", 
+                        AuthenticationType = AuthenticationType.Admin
+                    })
+                    .Use<GurgleAuthentication>()
+                    .UseNancy(new NancyOptions
+                    {
+                        Bootstrapper = new AreaBootstrapper("Admin")
+                    })
+                )
+                .Map("/api", a => a
+                    .UseNancy(new NancyOptions
+                    {
+                        Bootstrapper = new AreaBootstrapper("Api")
+                    })
+                )
                 .UseNancy(new NancyOptions
                 {
                     PerformPassThrough = c => c.Response.StatusCode == HttpStatusCode.ImATeapot,

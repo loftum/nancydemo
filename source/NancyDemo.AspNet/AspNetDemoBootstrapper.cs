@@ -5,12 +5,12 @@ namespace NancyDemo.AspNet
 //    public class AspNetDemoBootstrapper : DefaultNancyBootstrapper
 //    {
 //        // Gotcha!
-//        public AspNetDemoBootstrapper(Pølse pølse)
+//        public AspNetDemoBootstrapper(Dependency dependency)
 //        {
 //        }
 //    }
 //
-//    public class Pølse
+//    public class Dependency
 //    {
 //        
 //    }

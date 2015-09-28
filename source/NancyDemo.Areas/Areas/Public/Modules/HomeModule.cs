@@ -23,7 +23,7 @@ namespace NancyDemo.Areas.Areas.Public.Modules
 //            Get["product/1"] = d => "One";
 //            Get["product/1"] = d => "Ein";
             Get["coffee"] = d => HttpStatusCode.ImATeapot;
-            Get["Error"] = ThrowError;
+            Get["error"] = ThrowError;
             Post["buy/{id}"] = BuyProduct;
             Post["emptyBasket"] = EmptyBasket;
             Get["async", runAsync: true] = GetSomethingAsync;
@@ -32,6 +32,14 @@ namespace NancyDemo.Areas.Areas.Public.Modules
             {
                 Get["hack"] = d => Response.AsImage("Content/hack.png");
             }
+
+            // custom HTTP verb
+            Scream["boo"] = d => "BOO!";
+        }
+
+        private RouteBuilder Scream
+        {
+            get { return new RouteBuilder("SCREAM", this); }
         }
 
         private async Task<object> GetSomethingAsync(dynamic arg, CancellationToken token)
