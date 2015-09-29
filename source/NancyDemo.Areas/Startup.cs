@@ -20,7 +20,7 @@ namespace NancyDemo.Areas
                         CookieName = "AdminUser", 
                         AuthenticationType = AuthenticationType.Admin
                     })
-                    .Use<GurgleAuthentication>()
+                    .Use<SomeAuthentication>()
                     .UseNancy(new NancyOptions
                     {
                         Bootstrapper = new AreaBootstrapper("Admin")

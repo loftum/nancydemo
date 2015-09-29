@@ -188,7 +188,7 @@
     <Compile Include="Authentication\AuthenticationExtensions.cs" />
     <Compile Include="Authentication\AuthenticationType.cs" />
     <Compile Include="Authentication\DemoUser.cs" />
-    <Compile Include="Authentication\GurgleAuthentication.cs" />
+    <Compile Include="Authentication\SomeAuthentication.cs" />
     <Compile Include="Bootstrap\AreaBootstrapper.cs" />
     <Compile Include="Bootstrap\AreaRootPathProvider.cs" />
     <Compile Include="Bootstrap\FruitOfTheDay.cs" />

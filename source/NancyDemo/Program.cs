@@ -7,7 +7,8 @@ namespace NancyDemo
     {
         static void Main(string[] args)
         {
-            using (var host = new NancyHost(new Uri("http://selfhost.nancyde.mo")))
+            var uri = new Uri("http://selfhost.nancyde.mo");
+            using (var host = new NancyHost(uri))
             {
                 host.Start();
                 Console.WriteLine("Started Nancy self host");
